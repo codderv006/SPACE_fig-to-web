@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kokoro:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumar One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Aldrich:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div
+      class="relative w-full h-[1024px] [&.animate]:animate-[1s_ease_0s_1_normal_forwards_fade-in] opacity-[0] text-left text-xl text-white font-kokoro"
+      data-animate-on-scroll
+    >
+      <div
+        class="absolute top-[0px] left-[0px] bg-white w-[1440px] h-[1024px] overflow-hidden"
+      >
+        <img
+          class="absolute top-[0px] left-[0px] w-[1440px] h-[1024px] object-cover"
+          alt=""
+          src="public/milkyway2695569--480-1@2x.png"
+        /><a
+          class="[text-decoration:none] absolute top-[348px] left-[17px] w-[1392px] h-[366px] overflow-hidden cursor-pointer text-[inherit]"
+          href="./component.html"
+          id="frameLink"
+          ><div
+            class="absolute top-[89px] left-[267px] [text-shadow:0px_4px_0px_rgba(255,_255,_255,_0.25)]"
+          >
+            Welcome to SPACE
+          </div>
+          <div
+            class="absolute top-[209px] left-[232px] box-border w-[941px] h-1 border-t-[4px] border-solid border-snow"
+          ></div>
+          <div
+            class="absolute top-[216px] left-[671px] text-[20px] tracking-[0.28em] leading-[167.5%] text-center opacity-[0.5]"
+          >
+            click
+          </div></a
+        ><a
+          class="[text-decoration:none] absolute top-[983px] left-[490px] text-base font-kumar-one text-[inherit] cursor-pointer hover:text-tomato"
+          href="https://www.instagram.com/vedant.time"
+          id="meetTheCreator"
+          >meet the creator of the SPACE @vedant.time</a
+        >
+      </div>
+    </div>
+
+    <script>
+      var frameLink = document.getElementById("frameLink");
+      if (frameLink) {
+        frameLink.addEventListener("click", function (e) {
+          window.location.href = "./component.html";
+        });
+      }
+      
+      var meetTheCreator = document.getElementById("meetTheCreator");
+      if (meetTheCreator) {
+        meetTheCreator.addEventListener("click", function () {
+          window.open("https://www.instagram.com/vedant.time/");
+        });
+      }
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
+  </body>
+</html>

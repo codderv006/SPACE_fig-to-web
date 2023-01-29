@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kokoro:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumar One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Aldrich:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <main
+      class="relative w-full h-[1024px] [&.animate]:animate-[1s_ease_0s_1_normal_forwards_fade-in] opacity-[0] text-left text-lg text-white font-kumar-one md:w-[960px] sm:w-[420px]"
+      data-animate-on-scroll
+    >
+      <div
+        class="absolute top-[0px] left-[0px] bg-white w-[1440px] h-[1024px] overflow-hidden"
+      >
+        <img
+          class="absolute top-[0px] left-[0px] w-[1440px] h-[1024px] object-cover"
+          alt=""
+          src="public/milkyway2695569--480-1@2x.png"
+        /><a
+          class="[text-decoration:none] absolute top-[663px] left-[980px] w-[293px] h-[221px] text-[inherit]"
+          href="./component1.html"
+          ><img
+            class="absolute h-[76.02%] w-full top-[0%] right-[0%] bottom-[23.98%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
+            alt=""
+            src="public/saturn-1@2x.png"
+          />
+          <div class="absolute top-[71.95%] left-[33.79%]">Saturn</div></a
+        ><a
+          class="[text-decoration:none] absolute top-[640px] left-[414px] w-[182px] h-[244px] text-[inherit]"
+          href="./component3.html"
+          ><div class="absolute top-[74.59%] left-[20.33%]">Mars</div>
+          <img
+            class="absolute h-[74.59%] w-full top-[0%] right-[0%] bottom-[25.41%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
+            alt=""
+            src="public/mars18087-1@2x.png" /></a
+        ><a
+          class="[text-decoration:none] absolute top-[378px] left-[117px] w-[201px] h-[249px] text-[inherit]"
+          href="./component2.html"
+          ><img
+            class="absolute h-[79.92%] w-full top-[0%] right-[0%] bottom-[20.08%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
+            alt=""
+            src="public/imageremovebgpreview-1@2x.png"
+          />
+          <div class="absolute top-[75.1%] left-[20.9%]">Earth</div></a
+        ><a
+          class="[text-decoration:none] absolute top-[369px] left-[720px] w-[260px] h-[267px] text-[inherit]"
+          href="./component4.html"
+          ><div class="absolute top-[76.78%] left-[21.92%]">Jupiter</div>
+          <img
+            class="absolute h-[76.78%] w-full top-[0%] right-[0%] bottom-[23.22%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
+            alt=""
+            src="public/jupiter-1@2x.png"
+        /></a>
+        <h1
+          class="m-0 absolute top-[39px] left-[260px] text-xl font-normal font-kokoro"
+        >
+          Welcome to SPACE
+        </h1>
+        <h2
+          class="m-0 absolute top-[201px] left-[442px] text-[44px] font-normal font-kokoro"
+        >
+          Where you wanna jump on
+        </h2>
+      </div>
+      <a
+        class="[text-decoration:none] absolute top-[983px] left-[490px] text-base text-[inherit] cursor-pointer"
+        href="https://www.instagram.com/vedant.time"
+        id="meetTheCreator"
+        >meet the creator of the SPACE @vedant.time</a
+      >
+    </main>
+
+    <script>
+      var meetTheCreator = document.getElementById("meetTheCreator");
+      if (meetTheCreator) {
+        meetTheCreator.addEventListener("click", function () {
+          window.open("https://www.instagram.com/vedant.time/");
+        });
+      }
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
+  </body>
+</html>
